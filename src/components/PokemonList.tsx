@@ -48,9 +48,9 @@ const PokemonList: React.FC<PokemonListProps> = ({ searchTerm, filters }) => {
       setIsLoading(false);
     }
   };
-  
+
   useEffect(() => {
-      fetchPokemons();
+    fetchPokemons();
   }, []);
 
   useEffect(() => {
@@ -103,6 +103,7 @@ const PokemonList: React.FC<PokemonListProps> = ({ searchTerm, filters }) => {
       <InfiniteScroll
         dataLength={displayedPokemons.length}
         next={loadMore}
+        loader={<></>}
         hasMore={displayedPokemons.length < allPokemons.length}
         endMessage={<p className="text-center mt-4">¡Has visto todos los Pokémon!</p>}
       >
